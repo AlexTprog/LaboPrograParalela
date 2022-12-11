@@ -1,4 +1,4 @@
-def entrada():    
+def entrada():
     n = int(input())
     circulos = list()
 
@@ -13,3 +13,6 @@ def entrada():
 if __name__ == "__main__":    
     entrada()
 
+# Crea fondo
+# Dibujar circulos - Colorear
+## Resolver intersecciones
