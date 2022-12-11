@@ -95,16 +95,16 @@ def draw_cicle(x, y, r, R, G, B):
     for i in range(0, 360):
         xi = int(r*cos(i*PI/180))
         yi = int(r*sin(i*PI/180))
-        
-        red[(x+xi)*(y+yi)] = red[(x+xi)*(y+yi)] ^ R
-        print(red[(x+xi)*(y+yi)])
-        green[(x+xi)*(y+yi)] = green[(x+xi)*(y+yi)] ^ G
-        blue[(x+xi)*(y+yi)] = blue[(x+xi)*(y+yi)] ^ B
-    
-    writePPM(red,green,blue,FILE)
+
+        red[(y+yi)*WIDTH+x+xi] = red[(y+yi)*WIDTH+x+xi] ^ R
+        green[(y+yi)*WIDTH+x+xi] = green[(y+yi)*WIDTH+x+xi] ^ G
+        blue[(y+yi)*WIDTH+x+xi] = blue[(y+yi)*WIDTH+x+xi] ^ B
+        # cambio
+    writePPM(red, green, blue, FILE)
+
 
 if __name__ == "__main__":
     circulos = entrada()
     create_image()
-    draw_rectangle()
-    # draw_cicle(100, 100, 100, 255, 0, 0)
+
+    draw_cicle(100, 100, 100, 255, 0, 0)
