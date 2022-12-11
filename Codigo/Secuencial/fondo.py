@@ -18,7 +18,7 @@ def writePPM(data, width, height, filename):
         rgb.append(f)  # Blue
     image = array.array('B', rgb)
 
-    with open(filename + '.ppm', 'wb') as f:        
+    with open(filename + '.ppm', 'wb') as f:
         f.write(bytearray(ppm_header, 'ascii'))
         image.tofile(f)
 
@@ -26,7 +26,7 @@ def writePPM(data, width, height, filename):
 def readPPM(path):
     data = []
 
-    with open(path) as f:
+    with open(path,"rb") as f:
         # read header
         header = f.read(2)
         f.read(1)  # blank
@@ -37,8 +37,7 @@ def readPPM(path):
         max_val = f.read(3)  # blank
         while (byte := f.read(1)):
             value = int.from_bytes(byte, byteorder='big')
-            data.append(value)
-            print(value)
+            data.append(value)            
             f.read(1)  # G
             f.read(1)  # B
 
@@ -56,18 +55,18 @@ def random_image():
 
 
 def draw_rectangle():
-    data = readPPM("sample.ppm")
+    data = readPPM("output.ppm")
     width = 640
     height = 480
     from_point = width*10
     to_point = width*100
-    for i in range(from_point, to_point):
-        data[i] = 180  # negro
-    writePPM(data, width, height, "gray_rectangle")
+    for i in range(from_point, to_point):        
+        data[i] = 255  # negro
+    writePPM(data, width, height, "output")
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     random_image()
-    # draw_rectangle()
+    draw_rectangle()
     # draw_square()
     image = "cpu_cache.ppm"
