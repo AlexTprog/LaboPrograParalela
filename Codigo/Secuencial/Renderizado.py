@@ -36,23 +36,29 @@ def readPPM(path):
     red = []
     green = []
     blue = []
-    width = 0
-    height = 0
+
     with open(path, "rb") as f:
         # read header
         header = f.read(2)
-        f.read(1)  # blank
-        width = f.read(3)
-        f.read(1)  # blank
-        height = f.read(3)
-        f.read(1)  # blank
-        max_val = f.read(3)  # blank
-        while (byte := f.read(1)):
-            r = int.from_bytes(byte, byteorder='big')
-            red.append(r)  # R
+
+        # Convertir la variable header a un objeto de tipo str
+        # si es necesario
+        if isinstance(header, bytes):
+            header = header.decode()
+
+        if header.strip() != "P6":
+            raise ValueError("Invalid PPM header")
+        # read width, height, and max color value
+        width, height, max_val = [int(x)
+                                  for x in f.readline().decode().split()]
+        # read pixel values
+        for i in range(width*height):
+            r = int.from_bytes(f.read(1), byteorder='big')
             g = int.from_bytes(f.read(1), byteorder='big')
-            green.append(g)  # G
             b = int.from_bytes(f.read(1), byteorder='big')
+            red.append(r)
+            green.append(g)
+
             blue.append(b)  # B
 
     return red, green, blue
@@ -70,14 +76,6 @@ def draw_rectangle():
     writePPM(red, green, blue, FILE)
 
 
-def combinarColor(data, new_data):
-    color = []
-    for i in range(WIDTH*HEIGHT):
-        new_color = data[i] ^ new_data[i]
-        color.append(int(new_color))
-    return color
-
-
 def entrada():
     n = int(input())
     circulos = list()
@@ -89,17 +87,21 @@ def entrada():
     return circulos
 
 
-def draw_cicle(x, y, r, R, G, B):
+def draw_circle(x, y, r, R, G, B):
+    # Leer el contenido del archivo PPM
     red, green, blue = readPPM(FILE)
 
-    for i in range(0, 360):
-        xi = int(r*cos(i*PI/180))
-        yi = int(r*sin(i*PI/180))
+    # Iterar sobre las coordenadas x e y desde -r hasta r
+    for xi in range(-r, r+1):
+        for yi in range(-r, r+1):
+            # Verificar si el punto actual está dentro del círculo
+            if xi*xi + yi*yi <= r*r:
+                # Modificar los valores RGB en el pixel correspondiente en la imagen
+                red[(y+yi)*WIDTH+(x+xi)] = R
+                green[(y+yi)*WIDTH+(x+xi)] = G
+                blue[(y+yi)*WIDTH+(x+xi)] = B
 
-        red[(y+yi)*WIDTH+x+xi] = red[(y+yi)*WIDTH+x+xi] ^ R
-        green[(y+yi)*WIDTH+x+xi] = green[(y+yi)*WIDTH+x+xi] ^ G
-        blue[(y+yi)*WIDTH+x+xi] = blue[(y+yi)*WIDTH+x+xi] ^ B
-        # cambio
+    # Escribir el contenido de la imagen modificada al archivo PPM
     writePPM(red, green, blue, FILE)
 
 
@@ -107,4 +109,6 @@ if __name__ == "__main__":
     circulos = entrada()
     create_image()
 
-    draw_cicle(100, 100, 100, 255, 0, 0)
+    draw_circle(100, 100, 100, 255, 0, 0)
+    draw_circle(200, 100, 100, 0, 255, 0)
+    draw_circle(300, 100, 100, 0, 0, 255)
