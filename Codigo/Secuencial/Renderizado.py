@@ -4,7 +4,7 @@ from math import cos, sin
 WIDTH = 1024
 HEIGHT = 960
 
-FILE = "output.ppm"
+FILE = "salida.ppm"
 PI = 3.14159
 
 
@@ -87,13 +87,17 @@ def entrada():
     return circulos
 
 
-def draw_circle(x, y, r, R, G, B):
+def draw_cicle(x, y, r, R, G, B):
     # Leer el contenido del archivo PPM
     red, green, blue = readPPM(FILE)
 
-    # Iterar sobre las coordenadas x e y desde 0 hasta r
-    for xi in range(r+1):
-        for yi in range(r+1):
+    # Iterar sobre las coordenadas x e y desde -r hasta r
+    for xi in range(-r, r+1):
+        for yi in range(-r, r+1):
+            # Verificar si el punto actual está fuera de los límites de la imagen
+            if x + xi < 0 or x + xi >= WIDTH or y + yi < 0 or y + yi >= HEIGHT:
+                continue
+
             # Verificar si el punto actual está dentro del círculo
             if xi*xi + yi*yi <= r*r:
                 # Modificar los valores RGB en el pixel correspondiente en la imagen
@@ -108,7 +112,5 @@ def draw_circle(x, y, r, R, G, B):
 if __name__ == "__main__":
     circulos = entrada()
     create_image()
-
-    draw_circle(100, 100, 100, 255, 0, 0)
-    draw_circle(200, 100, 100, 0, 255, 0)
-    draw_circle(300, 100, 100, 0, 0, 255)
+    for c in circulos:
+        draw_cicle(c[0], c[1], c[2], c[3], c[4], c[5])
