@@ -1,6 +1,6 @@
 import array
 from math import cos, sin
-
+from multiprocessing import Pool
 WIDTH = 1024
 HEIGHT = 960
 
@@ -112,5 +112,5 @@ def draw_cicle(x, y, r, R, G, B):
 if __name__ == "__main__":
     circulos = entrada()
     create_image()
-    for c in circulos:
-        draw_cicle(c[0], c[1], c[2], c[3], c[4], c[5])
+    with Pool(processes=4) as pool:
+        pool.starmap(draw_cicle, circulos)
