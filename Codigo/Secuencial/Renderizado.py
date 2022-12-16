@@ -1,31 +1,30 @@
 import array
-from math import cos, sin
-from multiprocessing import Pool
-WIDTH = 1024
-HEIGHT = 960
+import struct
 
+WIDTH, HEIGHT = (1024, 960)
 FILE = "salida.ppm"
 PI = 3.14159
 
 
 def create_image():
-    red = []
-    green = []
-    blue = []
-    for i in range(HEIGHT*WIDTH):
-        red.append(0)
-        green.append(0)
-        blue.append(0)
-    writePPM(red, green, blue, FILE)
+
+    pixels = [(0, 0, 0)] * (HEIGHT * WIDTH)
+
+    # Convertir la lista de tuplas de pixeles en tres arreglos
+    # separados para los valores de rojo, verde y azul
+
+    # Escribir la imagen en el archivo PPM
+    writePPM(pixels, FILE)
 
 
-def writePPM(red, green, blue, filename):
+def writePPM(pixels, filename):
     ppm_header = f'P6 {WIDTH} {HEIGHT} {255}\n'
     rgb = []
-    for i in range(len(red)):
-        rgb.append(red[i])  # Red
-        rgb.append(green[i])  # Green
-        rgb.append(blue[i])  # Blue
+    for i in range(len(pixels)):
+        r, g, b = pixels[i]
+        rgb.append(r)  # Red
+        rgb.append(g)  # Green
+        rgb.append(b)  # Blue
     image = array.array('B', rgb)
     with open(filename, 'wb') as f:
         f.write(bytearray(ppm_header, 'ascii'))
@@ -33,9 +32,8 @@ def writePPM(red, green, blue, filename):
 
 
 def readPPM(path):
-    red = []
-    green = []
-    blue = []
+    # Crear una matriz para almacenar los valores RGB de todos los pixeles
+    pixels = []
 
     with open(path, "rb") as f:
         # read header
@@ -51,45 +49,35 @@ def readPPM(path):
         # read width, height, and max color value
         width, height, max_val = [int(x)
                                   for x in f.readline().decode().split()]
+
         # read pixel values
         for i in range(width*height):
-            r = int.from_bytes(f.read(1), byteorder='big')
-            g = int.from_bytes(f.read(1), byteorder='big')
-            b = int.from_bytes(f.read(1), byteorder='big')
-            red.append(r)
-            green.append(g)
+            # Leer los valores de los pixeles utilizando la función
+            # struct.unpack en lugar de int.from_bytes
+            r, g, b = struct.unpack('>BBB', f.read(3))
+            pixels.append((r, g, b))
 
-            blue.append(b)  # B
+    # Desempaquetar las tuplas de pixeles en tres arreglos separados
+    # para los valores de rojo, verde y azul
 
-    return red, green, blue
-
-
-def draw_rectangle():
-    red, green, blue = readPPM(FILE)
-    from_point = WIDTH*10
-    to_point = WIDTH*100
-
-    for i in range(from_point, to_point):
-        red[i] = red[i] ^ 0
-        green[i] = green[i] ^ 255
-        blue[i] = blue[i] ^ 0
-    writePPM(red, green, blue, FILE)
+    return pixels
 
 
 def entrada():
     n = int(input())
-    circulos = list()
+    circulos = []
 
     for i in range(0, n):
         x = input().split()
         x = map(int, x)
-        circulos.append(list(x))
+        circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
 
 def draw_cicle(x, y, r, R, G, B):
+
     # Leer el contenido del archivo PPM
-    red, green, blue = readPPM(FILE)
+    pixels = readPPM(FILE)
 
     # Iterar sobre las coordenadas x e y desde -r hasta r
     for xi in range(-r, r+1):
@@ -101,16 +89,14 @@ def draw_cicle(x, y, r, R, G, B):
             # Verificar si el punto actual está dentro del círculo
             if xi*xi + yi*yi <= r*r:
                 # Modificar los valores RGB en el pixel correspondiente en la imagen
-                red[(y+yi)*WIDTH+(x+xi)] = R
-                green[(y+yi)*WIDTH+(x+xi)] = G
-                blue[(y+yi)*WIDTH+(x+xi)] = B
+                pixels[(y+yi)*WIDTH + (x+xi)] = (R, G, B)
 
     # Escribir el contenido de la imagen modificada al archivo PPM
-    writePPM(red, green, blue, FILE)
+    writePPM(pixels, FILE)
 
 
 if __name__ == "__main__":
     circulos = entrada()
     create_image()
-    with Pool(processes=4) as pool:
-        pool.starmap(draw_cicle, circulos)
+    for c in circulos:
+        draw_cicle(c[0], c[1], c[2], c[3], c[4], c[5])
