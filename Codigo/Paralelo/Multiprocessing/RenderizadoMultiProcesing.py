@@ -17,7 +17,7 @@ def create_image():
     # separados para los valores de rojo, verde y azul
 
     # Escribir la imagen en el archivo PPM
-    writePPM(pixels, FILE)
+    return pixels
 
 
 def writePPM(pixels, filename):
@@ -34,48 +34,6 @@ def writePPM(pixels, filename):
         image.tofile(f)
 
 
-def readPPM(path):
-    # Crear una matriz para almacenar los valores RGB de todos los pixeles
-    pixels = []
-
-    with open(path, "rb") as f:
-        # read header
-        header = f.read(2)
-
-        # Convertir la variable header a un objeto de tipo str
-        # si es necesario
-        if isinstance(header, bytes):
-            header = header.decode()
-
-        if header.strip() != "P6":
-            raise ValueError("Invalid PPM header")
-        # read width, height, and max color value
-        width, height, max_val = [int(x)
-                                  for x in f.readline().decode().split()]
-
-        # read pixel values
-        for i in range(width*height):
-            # Leer los valores de los pixeles utilizando la función
-            # struct.unpack en lugar de int.from_bytes
-            r, g, b = struct.unpack('>BBB', f.read(3))
-            pixels.append((r, g, b))
-
-    # Desempaquetar las tuplas de pixeles en tres arreglos separados
-    # para los valores de rojo, verde y azul
-
-    return pixels
-
-
-def draw_rectangle():
-    red, green, blue = readPPM(FILE)
-    for i in range(WIDTH*10, WIDTH*100):
-        # Modificar los valores RGB en el pixel correspondiente en la imagen
-        red[i] = 0
-        green[i] = 255
-        blue[i] = 0
-    writePPM(red, green, blue, FILE)
-
-
 def entrada():
     n = int(input())
     circulos = []
@@ -86,10 +44,12 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
+# Pasar a cython
 
-def draw_cicle(x, y, r, R, G, B):
+
+def draw_cicle(c, pixels):
+    x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
     # Leer el contenido del archivo PPM
-    pixels = readPPM(FILE)
 
     # Iterar sobre las coordenadas x e y desde -r hasta r
     for xi in range(-r, r+1):
@@ -101,16 +61,22 @@ def draw_cicle(x, y, r, R, G, B):
             # Verificar si el punto actual está dentro del círculo
             if xi*xi + yi*yi <= r*r:
                 # Modificar los valores RGB en el pixel correspondiente en la imagen
-                pixels[(y+yi)*WIDTH + (x+xi)] = (R, G, B)
+
+                pixels[(y+yi)*WIDTH + (x+xi)] = (
+                    pixels[(y+yi)*WIDTH + (x+xi)][0] ^ R,
+                    pixels[(y+yi)*WIDTH+(x+xi)][1] ^ G,
+                    pixels[(y+yi)*WIDTH + (x+xi)][2] ^ B)
 
     # Escribir el contenido de la imagen modificada al archivo PPM
-    writePPM(pixels, FILE)
+    return pixels
 
 
 if __name__ == "__main__":
     circulos = entrada()
-    create_image()
+    pixels = create_image()
     with Pool() as pool:
 
         for c in circulos:
-            pool.starmap(draw_cicle, [c])
+            pixels = draw_cicle(c, pixels)
+
+    writePPM(pixels, FILE)

@@ -1,5 +1,4 @@
 import array
-import struct
 
 WIDTH, HEIGHT = (1024, 960)
 FILE = "salida.ppm"
@@ -41,7 +40,7 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
-
+#Pasar a cython
 def draw_cicle(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
     # Leer el contenido del archivo PPM
@@ -68,7 +67,6 @@ def draw_cicle(c, pixels):
 
 if __name__ == "__main__":
     circulos = entrada()
-
     pixels = create_image()
     for c in circulos:
         pixels = draw_cicle(c, pixels)
