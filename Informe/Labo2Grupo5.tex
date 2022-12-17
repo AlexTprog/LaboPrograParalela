@@ -16,7 +16,7 @@
         \includegraphics[width=4cm,height=4cm]{UNMSM}
     \end{figure}
 
-    \textbf{Universidad Nacional Mayor de San marcos} \\
+    \textbf{Universidad Nacional Mayor de San Marcos} \\
     (Universidad del Perú,DECANA DE AMERICA)\\
     \vspace{5mm}
     FACULTAD DE INGENIERIA DE SISTEMAS E INFORMATICA
@@ -62,11 +62,11 @@
             \item \textbf{Función de entrada}
             La función de entrada llamada "entrada" inicia solicitando al usuario que ingrese el número de círculos a dibujar, una vez obtenido el número de cícrlos, se realiza una loop para solicitar los siguiente datos por cada círculo: coordenada (x,y) que representa el eje del círculo, radio del círculo, y valores para cada canal de color rgb del círculo, en el orden rojo, verde y azul. Luego, guarda dichos datos en una lista llamada círculos y retorna dicha lista.
             \item \textbf{Función de creación de canvas}
-            La función de creación del canvas, llamada "create_image", genera una imagen del tamaño 1024 x 960 preestablecido multiplicando con el valor de los canales de color negro, representado en rgb como 000 (respectivamente para cada canal de color), y finalmente guarda el resultado en una lista, que es el retorno de la función.
+            La función de creación del canvas, llamada ''create_image'', genera una imagen del tamaño 1024 x 960 preestablecido multiplicando con el valor de los canales de color negro, representado en rgb como 000 (respectivamente para cada canal de color), y finalmente guarda el resultado en una lista, que es el retorno de la función.
             \item \textbf{Función de dibujo}
-            La función de dibujo de círculos, llamada "draw_circle", se ejecuta por cada n círculo a dibujar de la siguiente manera: Primero, realiza la lectura de los datos de cada círculo, asignando los valores en cada lugar de un array. Luego empieza a realizar iteraciones entre la coordenada x e y, en un rango de -radio a + radio, y procede a realizar dos verificaciones, la primera si el punto actual está fuera de los límites de la imagen, y la segunda si el punto actual está dentro del círculo, con la ecuación de la circunferencia \sqrt{x} + \sqrt{y} = \sqrt{r}. Una vez realidad dichas validaciones, guarda los datos del píxel según canal de color y una función XOR, y los inserta en una posición. Una vez generado la lista de píxeles con su posición y respectivo color rgb, la función retorna dicha lista de píxeles a modificar en la imagen.
+            La función de dibujo de círculos, llamada ''draw_circle'', se ejecuta por cada n círculo a dibujar de la siguiente manera: Primero, realiza la lectura de los datos de cada círculo, asignando los valores en cada lugar de un array. Luego empieza a realizar iteraciones entre la coordenada x e y, en un rango de -radio a + radio, y procede a realizar dos verificaciones, la primera si el punto actual está fuera de los límites de la imagen, y la segunda si el punto actual está dentro del círculo, con la ecuación de la circunferencia \sqrt{x} + \sqrt{y} = \sqrt{r}. Una vez realidad dichas validaciones, guarda los datos del píxel según canal de color y una función XOR, y los inserta en una posición. Una vez generado la lista de píxeles con su posición y respectivo color rgb, la función retorna dicha lista de píxeles a modificar en la imagen.
             \item \textbf{Función de escritura de archivo}
-            La función de escritura de archivo, llamada "writePPM", genera la imagen de salida final, iniciando con el header del archivo, luego genera una lista llamada rgb donde almacenará el color de cada píxel según posición. una vez realizado esto se guarda la imagen en un array.array y escribe el archivo PPM, retornando como resultado el archivo de salida.
+            La función de escritura de archivo, llamada ''writePPM'', genera la imagen de salida final, iniciando con el header del archivo, luego genera una lista llamada rgb donde almacenará el color de cada píxel según posición. una vez realizado esto se guarda la imagen en un array.array y escribe el archivo PPM, retornando como resultado el archivo de salida.
         \end{itemize}
 
         \vspace{10mm}
