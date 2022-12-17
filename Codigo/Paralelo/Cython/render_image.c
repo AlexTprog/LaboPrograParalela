@@ -1909,13 +1909,13 @@ static PyObject *__pyx_pf_12render_image_draw_circle(CYTHON_UNUSED PyObject *__p
       }
   }
 
-  /* "render_image.pyx":37
+  /* "render_image.pyx":36
+ *                             ] = Cb.data.as_ints[(y+yi)*w + (x+xi)] ^ B
  * 
- *     # Escribir el contenido de la imagen modificada al archivo PPM
  *     return Cr, Cg, Cb             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(((PyObject *)__pyx_v_Cr));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_Cr));

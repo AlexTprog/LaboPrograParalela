@@ -12,7 +12,6 @@ def create_image():
     # Convertir la lista de tuplas de pixeles en tres arreglos
     # separados para los valores de rojo, verde y azul
 
-    # Escribir la imagen en el archivo PPM
     return pixels
 
 
@@ -40,12 +39,9 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
-# Pasar a cython
-
 
 def draw_circle(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
-    # Leer el contenido del archivo PPM
 
     # Iterar sobre las coordenadas x e y desde -r hasta r
     for xi in range(-r, r+1):
@@ -57,13 +53,11 @@ def draw_circle(c, pixels):
             # Verificar si el punto actual está dentro del círculo
             if xi*xi + yi*yi <= r*r:
                 # Modificar los valores RGB en el pixel correspondiente en la imagen
-
                 pixels[(y+yi)*WIDTH + (x+xi)] = (
                     pixels[(y+yi)*WIDTH + (x+xi)][0] ^ R,
                     pixels[(y+yi)*WIDTH+(x+xi)][1] ^ G,
                     pixels[(y+yi)*WIDTH + (x+xi)][2] ^ B)
 
-    # Escribir el contenido de la imagen modificada al archivo PPM
     return pixels
 
 

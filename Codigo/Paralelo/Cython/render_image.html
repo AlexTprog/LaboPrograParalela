@@ -634,10 +634,9 @@ static PyObject *__pyx_pf_12render_image_draw_circle(CYTHON_UNUSED PyObject *__p
 <pre class='cython code score-0 '>                              (__pyx_v_Cb-&gt;data.as_ints[(((__pyx_v_y + __pyx_v_yi) * __pyx_v_w) + (__pyx_v_x + __pyx_v_xi))]) = ((__pyx_v_Cb-&gt;data.as_ints[(((__pyx_v_y + __pyx_v_yi) * __pyx_v_w) + (__pyx_v_x + __pyx_v_xi))]) ^ __pyx_v_B);
 </pre><pre class="cython line score-0">&#xA0;<span class="">34</span>:                             ] = Cb.data.as_ints[(y+yi)*w + (x+xi)] ^ B</pre>
 <pre class="cython line score-0">&#xA0;<span class="">35</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">36</span>:     # Escribir el contenido de la imagen modificada al archivo PPM</pre>
-<pre class="cython line score-12" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">37</span>:     return Cr, Cg, Cb</pre>
+<pre class="cython line score-12" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">36</span>:     return Cr, Cg, Cb</pre>
 <pre class='cython code score-12 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
-  __pyx_t_6 = <span class='py_c_api'>PyTuple_New</span>(3);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 37, __pyx_L1_error)</span>
+  __pyx_t_6 = <span class='py_c_api'>PyTuple_New</span>(3);<span class='error_goto'> if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 36, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_6);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_v_Cr));
   <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject *)__pyx_v_Cr));
