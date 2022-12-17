@@ -1,10 +1,6 @@
 import array
-import struct
-import math
-from math import cos, sin
-from multiprocessing import Pool
+import multiprocessing
 WIDTH, HEIGHT = (1024, 960)
-pool = Pool(processes=8)
 FILE = "salidaTest.ppm"
 PI = 3.14159
 
@@ -19,12 +15,16 @@ def create_image():
     # Escribir la imagen en el archivo PPM
     return pixels
 
-
 def writePPM(pixels, filename):
     ppm_header = f'P6 {WIDTH} {HEIGHT} {255}\n'
     rgb = []
     for i in range(len(pixels)):
-        r, g, b = pixels[i]
+        if (len(pixels[i])==3):
+            print(pixels[i])
+            r, g, b = pixels[i]
+        else:
+            print(pixels[i])
+            print("FFFFF")
         rgb.append(r)  # Red
         rgb.append(g)  # Green
         rgb.append(b)  # Blue
@@ -32,7 +32,6 @@ def writePPM(pixels, filename):
     with open(filename, 'wb') as f:
         f.write(bytearray(ppm_header, 'ascii'))
         image.tofile(f)
-
 
 def entrada():
     n = int(input())
@@ -44,10 +43,7 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
-# Pasar a cython
-
-
-def draw_cicle(c, pixels):
+def draw_circle(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
     # Leer el contenido del archivo PPM
 
@@ -70,13 +66,13 @@ def draw_cicle(c, pixels):
     # Escribir el contenido de la imagen modificada al archivo PPM
     return pixels
 
-
 if __name__ == "__main__":
     circulos = entrada()
     pixels = create_image()
-    with Pool() as pool:
 
-        for c in circulos:
-            pixels = draw_cicle(c, pixels)
+    # Crear un pool de procesos con 4 procesos
+    with multiprocessing.Pool(4) as p:
+        # Distribuir el trabajo entre los procesos
+        pixels = p.starmap(draw_circle, [(c, pixels) for c in circulos])
 
     writePPM(pixels, FILE)

@@ -1,4 +1,5 @@
 import array
+import render_image
 
 WIDTH, HEIGHT = (1024, 960)
 FILE = "salida.ppm"
@@ -6,21 +7,19 @@ PI = 3.14159
 
 
 def create_image():
-
-    pixels = [(0, 0, 0)] * (HEIGHT * WIDTH)
-
-    # Convertir la lista de tuplas de pixeles en tres arreglos
-    # separados para los valores de rojo, verde y azul
-
-    # Escribir la imagen en el archivo PPM
-    return pixels
+    r = [0]*(HEIGHT * WIDTH)
+    g = [0]*(HEIGHT * WIDTH)
+    b = [0]*(HEIGHT * WIDTH)
+    return r, g, b
 
 
-def writePPM(pixels, filename):
+def writePPM(R, G, B, filename):
     ppm_header = f'P6 {WIDTH} {HEIGHT} {255}\n'
     rgb = []
-    for i in range(len(pixels)):
-        r, g, b = pixels[i]
+    for i in range(len(R)):
+        r = R[i]
+        g = G[i]
+        b = B[i]
         rgb.append(r)  # Red
         rgb.append(g)  # Green
         rgb.append(b)  # Blue
@@ -37,16 +36,23 @@ def entrada():
     for i in range(0, n):
         x = input().split()
         x = map(int, x)
-        circulos.append(tuple(x))  # <-- Crear una tupla
+        circulos.append(tuple(x))
     return circulos
 
-# Pasar a cython
 
+if __name__ == "__main__":
+    circulos = entrada()
+    r, g, b = create_image()
+    render_image.imprimir(array("i", [1, 2, 3, 4, 5, 6]))
+    
+    # for c in circulos:
+    #     r, g, b = rd.draw_circle(
+    #         c[0], c[1], c[2], c[3], c[4], c[5], bytes(r), bytes(g), bytes(b), WIDTH, HEIGHT)
+    #     #r, g, b = rd.draw_circle(
+    #     #   c[0], c[1], c[2], c[3], c[4], c[5], r, g, b, WIDTH, HEIGHT)
+    # writePPM(r, g, b, FILE)
 
-def draw_circle(c, pixels):
-    x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
-    # Leer el contenido del archivo PPM
-
+def draw_cicle(x, y, r, R, G, B, Cr, Cg, Cb):
     # Iterar sobre las coordenadas x e y desde -r hasta r
     for xi in range(-r, r+1):
         for yi in range(-r, r+1):
@@ -57,20 +63,8 @@ def draw_circle(c, pixels):
             # Verificar si el punto actual está dentro del círculo
             if xi*xi + yi*yi <= r*r:
                 # Modificar los valores RGB en el pixel correspondiente en la imagen
+                Cr[(y+yi)*WIDTH + (x+xi)] = Cr[(y+yi)*WIDTH + (x+xi)] ^ R
+                Cg[(y+yi)*WIDTH + (x+xi)] = Cg[(y+yi)*WIDTH + (x+xi)] ^ G
+                Cb[(y+yi)*WIDTH + (x+xi)] = Cb[(y+yi)*WIDTH + (x+xi)] ^ B
 
-                pixels[(y+yi)*WIDTH + (x+xi)] = (
-                    pixels[(y+yi)*WIDTH + (x+xi)][0] ^ R,
-                    pixels[(y+yi)*WIDTH+(x+xi)][1] ^ G,
-                    pixels[(y+yi)*WIDTH + (x+xi)][2] ^ B)
-
-    # Escribir el contenido de la imagen modificada al archivo PPM
-    return pixels
-
-
-if __name__ == "__main__":
-    circulos = entrada()
-    pixels = create_image()
-    for c in circulos:
-        pixels = draw_circle(c, pixels)
-
-    writePPM(pixels, FILE)
+    return Cr, Cg, Cb
