@@ -32,6 +32,5 @@ def draw_circle(int x, int y, int r, int R, int G, int B, array.array Cr, array.
                             ] = Cg.data.as_ints[(y+yi)*w + (x+xi)] ^ G
             Cb.data.as_ints[(y+yi)*w + (x+xi)
                             ] = Cb.data.as_ints[(y+yi)*w + (x+xi)] ^ B
-
-    # Escribir el contenido de la imagen modificada al archivo PPM
+    
     return Cr, Cg, Cb

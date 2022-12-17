@@ -2,7 +2,7 @@ import array
 import threading
 import multiprocessing
 WIDTH, HEIGHT = (1024, 960)
-FILE = "salidaTest.ppm"
+FILE = "salida.ppm"
 PI = 3.14159
 
 
@@ -13,19 +13,14 @@ def create_image():
     # Convertir la lista de tuplas de pixeles en tres arreglos
     # separados para los valores de rojo, verde y azul
 
-    # Escribir la imagen en el archivo PPM
     return pixels
+
 
 def writePPM(pixels, filename):
     ppm_header = f'P6 {WIDTH} {HEIGHT} {255}\n'
     rgb = []
     for i in range(len(pixels)):
-        if (len(pixels[i])==3):
-            print(pixels[i])
-            r, g, b = pixels[i]
-        else:
-            print(pixels[i])
-            print("FFFFF")
+        r, g, b = pixels[i]
         rgb.append(r)  # Red
         rgb.append(g)  # Green
         rgb.append(b)  # Blue
@@ -33,6 +28,7 @@ def writePPM(pixels, filename):
     with open(filename, 'wb') as f:
         f.write(bytearray(ppm_header, 'ascii'))
         image.tofile(f)
+
 
 def entrada():
     n = int(input())
@@ -44,9 +40,9 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
+
 def draw_circle_thread(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
-    # Leer el contenido del archivo PPM
 
     # Iterar sobre las coordenadas x e y desde -r hasta r
     for xi in range(-r, r+1):
@@ -63,9 +59,8 @@ def draw_circle_thread(c, pixels):
                     pixels[(y+yi)*WIDTH + (x+xi)][0] ^ R,
                     pixels[(y+yi)*WIDTH+(x+xi)][1] ^ G,
                     pixels[(y+yi)*WIDTH + (x+xi)][2] ^ B)
-
-    # Escribir el contenido de la imagen modificada al archivo PPM
     return pixels
+
 
 if __name__ == "__main__":
     circulos = entrada()

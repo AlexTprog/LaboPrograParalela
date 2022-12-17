@@ -40,8 +40,7 @@ def draw_circle(x, y, r, R, G, B, Cr, Cg, Cb):
                 Cr[(y+yi)*WIDTH + (x+xi)] = Cr[(y+yi)*WIDTH + (x+xi)] ^ R
                 Cg[(y+yi)*WIDTH + (x+xi)] = Cg[(y+yi)*WIDTH + (x+xi)] ^ G
                 Cb[(y+yi)*WIDTH + (x+xi)] = Cb[(y+yi)*WIDTH + (x+xi)] ^ B
-
-    # Escribir el contenido de la imagen modificada al archivo PPM
+    
     return Cr, Cg, Cb
 
 
