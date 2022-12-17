@@ -44,7 +44,7 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
-def draw_circle(c, pixels):
+def draw_circle_thread(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
     # Leer el contenido del archivo PPM
 
