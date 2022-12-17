@@ -36,12 +36,9 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
-# Pasar a cython
-
 
 def draw_circle_thread(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
-    # Leer el contenido del archivo PPM
 
     # Iterar sobre las coordenadas x e y desde -r hasta r
     for xi in range(-r, r+1):
@@ -59,7 +56,6 @@ def draw_circle_thread(c, pixels):
                     pixels[(y+yi)*WIDTH+(x+xi)][1] ^ G,
                     pixels[(y+yi)*WIDTH + (x+xi)][2] ^ B)
 
-    # Escribir el contenido de la imagen modificada al archivo PPM
     return pixels
 
 
