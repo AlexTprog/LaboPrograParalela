@@ -1,4 +1,5 @@
 import array
+import threading
 import multiprocessing
 WIDTH, HEIGHT = (1024, 960)
 FILE = "salidaTest.ppm"
@@ -69,10 +70,14 @@ def draw_circle(c, pixels):
 if __name__ == "__main__":
     circulos = entrada()
     pixels = create_image()
+    threads = []
+    for c in circulos:
+        t = threading.Thread(target=draw_circle_thread, args=(c, pixels))
+        threads.append(t)
+        t.start()
 
-    # Crear un pool de procesos con 4 procesos
-    with multiprocessing.Pool(4) as p:
-        # Distribuir el trabajo entre los procesos
-        pixels = p.starmap(draw_circle, [(c, pixels) for c in circulos])
+    # Esperar a que todos los hilos terminen
+    for t in threads:
+        t.join()
 
     writePPM(pixels, FILE)
