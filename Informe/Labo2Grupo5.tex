@@ -64,9 +64,9 @@
             \item \textbf{Función de creación de canvas}
             La función de creación del canvas, llamada create\_image, genera una imagen del tamaño 1024 por 960 preestablecido multiplicando con el valor de los canales de color negro, representado en rgb como 000 (respectivamente para cada canal de color), y finalmente guarda el resultado en una lista, que es el retorno de la función.
             \item \textbf{Función de dibujo}
-            La función de dibujo de círculos, llamada draw\_circle, se ejecuta por cada n círculo a dibujar de la siguiente manera: Primero, realiza la lectura de los datos de cada círculo, asignando los valores en cada lugar de un array. Luego empieza a realizar iteraciones entre la coordenada x e y, en un rango de -radio a + radio, y procede a realizar dos verificaciones, la primera si el punto actual está fuera de los límites de la imagen, y la segunda si el punto actual está dentro del círculo, con la ecuación de la circunferencia \begin{equation}\sqrt{x} + \sqrt{y} = \sqrt{r}\end{equation}. Una vez realidad dichas validaciones, guarda los datos del píxel según canal de color y una función XOR, y los inserta en una posición. Una vez generado la lista de píxeles con su posición y respectivo color rgb, la función retorna dicha lista de píxeles a modificar en la imagen.
+            La función de dibujo de círculos, llamada draw\_circle, se ejecuta por cada n círculo a dibujar de la siguiente manera: Primero, realiza la lectura de los datos de cada círculo, asignando los valores en cada lugar de un array. Luego empieza a realizar iteraciones entre la coordenada x e y, en un rango de -radio a + radio, y procede a realizar dos verificaciones, la primera si el punto actual está fuera de los límites de la imagen, y la segunda si el punto actual está dentro del círculo, con la ecuación de la circunferencia \begin{equation}\sqrt{x} + \sqrt{y} = \sqrt{r}\end{equation} Una vez realizado dichas validaciones, guarda los datos del píxel según canal de color y una función XOR, y los inserta en una posición. Una vez generado la lista de píxeles con su posición y respectivo color rgb, la función retorna dicha lista de píxeles a modificar en la imagen.
             \item \textbf{Función de escritura de archivo}
-            La función de escritura de archivo, llamada writePPM, genera la imagen de salida final, iniciando con el header del archivo, luego genera una lista llamada rgb donde almacenará el color de cada píxel según posición. una vez realizado esto se guarda la imagen en un array.array y escribe el archivo PPM, retornando como resultado el archivo de salida.
+            La función de escritura de archivo, llamada writePPM, genera la imagen de salida final, iniciando con el header del archivo, luego genera una lista llamada rgb donde almacenará el color de cada píxel según posición. una vez realizado esto se guarda la imagen en un ''array.array'' y escribe el archivo PPM, retornando como resultado el archivo de salida.
         \end{itemize}
 
         \vspace{10mm}
@@ -75,7 +75,7 @@
                 \item Procesador: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  2.10 GHz
                 \item Memoria RAM: 16 GB
                 \item Número de procesadores: 8
-                \item Sistema Operativo: 
+                \item Sistema Operativo: Windows 10 Home (64 bits)
                 \item IDE de desarrollo y pruebas: Visual Studio Code
             \end{itemize}
         \item \textbf{Datos de entrada utilizados para las pruebas:}
