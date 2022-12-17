@@ -1,6 +1,5 @@
 import array
-
-import multiprocessing
+import threading
 WIDTH, HEIGHT = (1024, 960)
 FILE = "salida.ppm"
 PI = 3.14159
@@ -9,9 +8,6 @@ PI = 3.14159
 def create_image():
 
     pixels = [(0, 0, 0)] * (HEIGHT * WIDTH)
-
-    # Convertir la lista de tuplas de pixeles en tres arreglos
-    # separados para los valores de rojo, verde y azul
 
     return pixels
 
@@ -40,9 +36,12 @@ def entrada():
         circulos.append(tuple(x))  # <-- Crear una tupla
     return circulos
 
+# Pasar a cython
+
 
 def draw_circle_thread(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
+    # Leer el contenido del archivo PPM
 
     # Iterar sobre las coordenadas x e y desde -r hasta r
     for xi in range(-r, r+1):
@@ -59,6 +58,8 @@ def draw_circle_thread(c, pixels):
                     pixels[(y+yi)*WIDTH + (x+xi)][0] ^ R,
                     pixels[(y+yi)*WIDTH+(x+xi)][1] ^ G,
                     pixels[(y+yi)*WIDTH + (x+xi)][2] ^ B)
+
+    # Escribir el contenido de la imagen modificada al archivo PPM
     return pixels
 
 
@@ -66,7 +67,13 @@ if __name__ == "__main__":
     circulos = entrada()
     pixels = create_image()
     threads = []
-    with multiprocessing.Pool(processes=6) as pool:
-        for c in circulos:
-            pixels = pool.apply(draw_circle_thread, args=(c, pixels))
+    for c in circulos:
+        t = threading.Thread(target=draw_circle_thread, args=(c, pixels))
+        threads.append(t)
+        t.start()
+
+    # Esperar a que todos los hilos terminen
+    for t in threads:
+        t.join()
+
     writePPM(pixels, FILE)
