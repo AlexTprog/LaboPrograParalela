@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.10)  10 DEC 2022 15:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.10)  17 DEC 2022 12:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -88,10 +88,7 @@ Package babel Info: Making > an active character on input line 722.
 File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count267
 \l__pdf_internal_box=\box52
-) (./Labo2Grupo5.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-)
+) (./Labo2Grupo5.aux)
 \openout1 = `Labo2Grupo5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -174,23 +171,529 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 29.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img//UNMSM.png> <./img//FISI.png>] (./Labo2Grupo5.aux
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img//UNMSM.png> <./img//FISI.png>]
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:65: Missing $ inserted.
+<inserted text> 
+                $
+l.65 ...de creación del canvas, llamada ''create_
+                                                  image'', genera una imagen...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 65.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:65: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.65 ...eate_image'', genera una imagen del tamañ
+                                                  o 1024 x 960 preestablecid...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 65.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:65: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.65 ...una lista, que es el retorno de la funció
+                                                  n.
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:66: LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66             \item
+                       \textbf{Función de dibujo}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:66: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66             \item \textbf
+                              {Función de dibujo}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:66: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66             \item \textbf
+                              {Función de dibujo}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67             La funció
+                           n de dibujo de círculos, llamada ''draw_circle''...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67             La función de dibujo de cí
+                                             rculos, llamada ''draw_circle''...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67             La función de dibujo de cí
+                                             rculos, llamada ''draw_circle''...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...''draw_circle'', se ejecuta por cada n cí
+                                                  rculo a dibujar de la sigu...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67 ...''draw_circle'', se ejecuta por cada n cí
+                                                  rculo a dibujar de la sigu...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...ealiza la lectura de los datos de cada cí
+                                                  rculo, asignando los valor...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67 ...ealiza la lectura de los datos de cada cí
+                                                  rculo, asignando los valor...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...iones, la primera si el punto actual está
+                                                   fuera de los límites de ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ... si el punto actual está fuera de los lí
+                                                  mites de la imagen, y la s...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67 ... si el punto actual está fuera de los lí
+                                                  mites de la imagen, y la s...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...gen, y la segunda si el punto actual está
+                                                   dentro del círculo, con ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...da si el punto actual está dentro del cí
+                                                  rculo, con la ecuación de...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67 ...da si el punto actual está dentro del cí
+                                                  rculo, con la ecuación de...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...está dentro del círculo, con la ecuació
+                                                  n de la circunferencia \sq...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...has validaciones, guarda los datos del pí
+                                                  xel según canal de color ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67 ...has validaciones, guarda los datos del pí
+                                                  xel según canal de color ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...aciones, guarda los datos del píxel segú
+                                                  n canal de color y una fun...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...píxel según canal de color y una funció
+                                                  n XOR, y los inserta en un...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...unción XOR, y los inserta en una posició
+                                                  n. Una vez generado la lis...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...osición. Una vez generado la lista de pí
+                                                  xeles con su posición y r...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67 ...osición. Una vez generado la lista de pí
+                                                  xeles con su posición y r...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...erado la lista de píxeles con su posició
+                                                  n y respectivo color rgb, ...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...sición y respectivo color rgb, la funció
+                                                  n retorna dicha lista de p...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 67.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.67 ...gb, la función retorna dicha lista de pí
+                                                  xeles a modificar en la im...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:67: Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.67 ...gb, la función retorna dicha lista de pí
+                                                  xeles a modificar en la im...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 67.
+
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68             \item
+                       \textbf{Función de escritura de archivo}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing $ inserted.
+<inserted text> 
+                $
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Missing } inserted.
+<inserted text> 
+                }
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (4959.17055pt too wide) in paragraph at lines 64--68
+\OT1/cmr/m/n/12 ''create$[]\OML/cmm/m/it/12 mage[]; generaunaimagendeltama[]o\OT1/cmr/m/n/12 1024\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 960\OML/cmm/m/it/12 preestablecidomultiplicandoconelvalordeloscanalesdecolornegro; representadoenrgbcomo\OT1/cmr/m/n/12 000(\OML/cmm/m/it/12 respectivamenteparacadacanaldecolor\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; yfinalmenteguardaelresultadoenunalista; queeselretornodelafunci[]n:[]Lafunci[]ndedibujodec[]$  
+ []
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:68: Extra }, or forgotten \endgroup.
+\@par ... \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.68             \item \textbf
+                              {Función de escritura de archivo}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[2]
+
+/home/alext/Documentos/Proyectos/scripts/Labo2PrograParalela/Informe/Labo2Grupo5.tex:90: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90         \end{itemize}
+                          
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[3] (./Labo2Grupo5.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 4731 strings out of 478238
- 83324 string characters out of 5850455
- 384735 words of memory out of 5000000
- 22946 multiletter control sequences out of 15000+600000
- 472302 words of font info for 38 fonts, out of 8000000 for 9000
+ 4746 strings out of 478238
+ 83506 string characters out of 5850455
+ 393783 words of memory out of 5000000
+ 22960 multiletter control sequences out of 15000+600000
+ 472639 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,7n,77p,373b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on Labo2Grupo5.pdf (1 page, 206003 bytes).
+ 67i,10n,77p,981b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Labo2Grupo5.pdf (3 pages, 270246 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 11 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

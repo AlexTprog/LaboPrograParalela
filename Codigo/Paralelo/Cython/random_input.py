@@ -1,7 +1,7 @@
 import random
 WIDTH, HEIGHT = (1024, 960)
 FILE = "input.txt"
-N = 10
+N = 6
 
 with open(FILE, 'w') as f:
     f.write(str(N))

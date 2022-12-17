@@ -11,6 +11,6 @@ ext_modules = [
 ]
 
 setup(
-    name='parallel-image-processing',
+    name='render_image_parallel',
     ext_modules=cythonize(ext_modules),
 )
