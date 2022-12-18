@@ -1,6 +1,6 @@
 import array
-
-import multiprocessing
+import multiprocessing as mp
+import threading
 WIDTH, HEIGHT = (1024, 960)
 FILE = "salida.ppm"
 PI = 3.14159
@@ -41,7 +41,7 @@ def entrada():
     return circulos
 
 
-def draw_circle_thread(c, pixels):
+def draw_circle(c, pixels):
     x, y, r, R, G, B = c[0], c[1], c[2], c[3], c[4], c[5]
 
     # Iterar sobre las coordenadas x e y desde -r hasta r
@@ -54,19 +54,41 @@ def draw_circle_thread(c, pixels):
             # Verificar si el punto actual está dentro del círculo
             if xi*xi + yi*yi <= r*r:
                 # Modificar los valores RGB en el pixel correspondiente en la imagen
-
                 pixels[(y+yi)*WIDTH + (x+xi)] = (
                     pixels[(y+yi)*WIDTH + (x+xi)][0] ^ R,
                     pixels[(y+yi)*WIDTH+(x+xi)][1] ^ G,
                     pixels[(y+yi)*WIDTH + (x+xi)][2] ^ B)
+
     return pixels
+
+
+def draw_chunk(chunk, pixels):
+    for c in chunk:
+        draw_circle(c, pixels)
 
 
 if __name__ == "__main__":
     circulos = entrada()
     pixels = create_image()
+    # Crear una lista de hilos
     threads = []
-    with multiprocessing.Pool(processes=6) as pool:
-        for c in circulos:
-            pixels = pool.apply(draw_circle_thread, args=(c, pixels))
+    # Dividir la lista de círculos en varias partes
+    nr_process = mp.cpu_count()
+    nr_circle = len(circulos)
+    if nr_circle > nr_process:
+        chunk_size = nr_circle // nr_process
+    else:
+        nr_process = nr_circle
+
+    chunk_size = len(circulos) // nr_process
+    # Crear un hilo para cada parte de la lista
+    for i in range(nr_process):
+        chunk = circulos[i*chunk_size: (i+1)*chunk_size]
+        thread = threading.Thread(target=draw_chunk, args=(chunk, pixels))
+        threads.append(thread)
+        thread.start()
+    # Esperar a que todos los hilos terminen
+    for thread in threads:
+        thread.join()
+    # Escribir la imagen
     writePPM(pixels, FILE)
