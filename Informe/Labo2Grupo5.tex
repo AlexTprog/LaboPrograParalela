@@ -72,32 +72,15 @@
         \vspace{10mm}
         \item \textbf{Entorno de pruebas:}
             \begin{itemize}
-                \item Procesador: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  2.10 GHz
-                \item Memoria RAM: 16 GB
-                \item Número de procesadores: 8
+                \item Procesador: AMD Ryzen 5 4600G with Radeon Graphics (12) @ 3.700GHz
+                \item Memoria RAM: 15281 MiB
+                \item Número de procesadores: 12
                 \item Sistema Operativo: Windows 10 Home (64 bits)
                 \item IDE de desarrollo y pruebas: Visual Studio Code
             \end{itemize}
         \item \textbf{Datos de entrada utilizados para las pruebas:}
             \begin{itemize}
-                \item \textbf{Datos de entrada 1:}
-                \begin{itemize}
-                    \item Número de círculos: 10
-                    \item Valores x, y, R, r, g, b por círculo:
-                    \begin{itemize}
-                        \item Círculo 1: 649 -173 219 2 22 212
-                        \item Círculo 2: 382 479 422 245 32 76
-                        \item Círculo 3: 718 409 495 25 230 240
-                        \item Círculo 4: -146 938 322 31 196 229
-                        \item Círculo 5: 431 326 417 175 205 163
-                        \item Círculo 6: 695 520 326 145 178 31
-                        \item Círculo 7: -81 347 313 97 63 27
-                        \item Círculo 8: -183 447 150 34 173 73
-                        \item Círculo 9: 186 463 427 13 210 190
-                        \item Círculo 10: 849 266 382 75 20 240
-                    \end{itemize}
-                \end{itemize}
-                \item \textbf{Datos de entrada 2:}
+                \item \textbf{Datos de entrada:}
                 \begin{itemize}
                     \item Número de círculos: 20
                     \item Valores x, y, R, r, g, b por círculo:
@@ -128,9 +111,40 @@
 
         \vspace{10mm}
         \item \textbf{Resultado de pruebas:}
-        Poner texto aquí
+            \begin{itemize}
+                \item \textbf{Datos de entrada:}
+                \begin{itemize}
+                    \renewcommand{\theenumi}{\alph{enumi}}
+                    \item Ejecución de pruebas:
+                        \begin{figure}[H]
+                            \includegraphics[width=1\linewidth, height=6cm]{cythonParalelo}
+                            \caption{Ejecucion 7 a 10 en orden de izquierda a derecha}
+                        \end{figure}
+                    \item Benchmark:
+                        \begin{figure}[H]
+                            \begin{subfigure}{0.49\textwidth}
+                                \includegraphics[width=1\linewidth, height=6cm]{TablaBench} 
+                            \end{subfigure}
+                            \begin{subfigure}{0.49\textwidth}
+                                \includegraphics[width=1\linewidth, height=6cm]{GrafBench}
+                            \end{subfigure}
+                            \caption{Benchmark de las ejecuciones realizadas}
+                        \end{figure}
+                    \item Intervalos de confianza:
+                        \begin{figure}[H]
+                            \begin{subfigure}{0.49\textwidth}
+                                \includegraphics[width=1\linewidth, height=6cm]{TablaCInt} 
+                            \end{subfigure}
+                            \begin{subfigure}{0.49\textwidth}
+                                \includegraphics[width=1\linewidth, height=6cm]{BoxCInt}
+                            \end{subfigure}
+                            \caption{Tabla de intervalos de confianza y boxplot (de izquierda a derecha)}
+                    \end{figure}
+                \end{itemize}
+            \end{itemize}
+        \vspace{10mm}
         \item \textbf{Análisis de resultados:}
-        Poner texto aquí
+        Como hemos podido visualizar en el benchmark, el algoritmo de renderizado utilizando Cython en versión secuencial y paralela son los más rápidos en ejecución, obteniendo que en algunas ejecuciones la versión paralela es más rápida. Vemos que interesantemente, nuestras versiones paralelas con multiprocessing y threading son mucho más lentas que la versión secuencial en Python nativo. Podríamos concluir que el uso de Cython y en versión paralela mejoró considerablemente el rendimiento de nuestro algoritmo.
         \item \textbf{Anexo:}
         \begin{itemize}
             \item Ray Tracer: https://github.com/aysusayin/Ray-Tracer
